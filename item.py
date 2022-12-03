@@ -13,6 +13,6 @@ class Item:
         print(self.desc)
         print()
         input("Press enter to continue...")
-    def put_in_planet(self, planet):
+    def put_on_planet(self, planet):
         self.loc = planet
         planet.add_item(self)
