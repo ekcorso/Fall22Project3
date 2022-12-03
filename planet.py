@@ -1,6 +1,6 @@
 import random
 
-class Room:
+class Planet:
     def __init__(self, description):
         self.desc = description
         self.monsters = []
@@ -13,10 +13,10 @@ class Room:
             if e[0] == direction:
                 return e[1]
         return self
-    def connect_rooms(room1, dir1, room2, dir2):
-        #creates "dir1" exit from room1 to room2 and vice versa
-        room1.add_exit(dir1, room2)
-        room2.add_exit(dir2, room1)
+    def connect_planets(planet1, dir1, planet2, dir2):
+        #creates "dir1" exit from planet1 to planet2 and vice versa
+        planet1.add_exit(dir1, planet2)
+        planet2.add_exit(dir2, planet1)
     def exit_names(self):
         return [x[0] for x in self.exits]
     def add_item(self, item):

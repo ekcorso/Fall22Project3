@@ -1,4 +1,4 @@
-from room import Room
+from planet import Planet
 from player import Player
 from item import Item
 from monster import Monster
@@ -8,16 +8,16 @@ import updater
 player = Player()
 
 def create_world():
-    a = Room("You are in room 1")
-    b = Room("You are in room 2")
-    c = Room("You are in room 3")
-    d = Room("You are in room 4")
-    Room.connect_rooms(a, "east", b, "west")
-    Room.connect_rooms(c, "east", d, "west")
-    Room.connect_rooms(a, "north", c, "south")
-    Room.connect_rooms(b, "north", d, "south")
+    a = Planet("You are in planet 1")
+    b = Planet("You are in planet 2")
+    c = Planet("You are in planet 3")
+    d = Planet("You are in planet 4")
+    Planet.connect_planets(a, "east", b, "west")
+    Planet.connect_planets(c, "east", d, "west")
+    Planet.connect_planets(a, "north", c, "south")
+    Planet.connect_planets(b, "north", d, "south")
     i = Item("Rock", "This is just a rock.")
-    i.put_in_room(b)
+    i.put_in_planet(b)
     player.location = a
     Monster("Bob the monster", 20, b)
 
@@ -29,12 +29,12 @@ def print_situation():
     print(player.location.desc)
     print()
     if player.location.has_monsters():
-        print("This room contains the following monsters:")
+        print("This planet contains the following monsters:")
         for m in player.location.monsters:
             print(m.name)
         print()
     if player.location.has_items():
-        print("This room contains the following items:")
+        print("This planet contains the following items:")
         for i in player.location.items:
             print(i.name)
         print()
