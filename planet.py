@@ -3,7 +3,7 @@ import random
 class Planet:
     def __init__(self, description):
         self.desc = description
-        self.monsters = []
+        self.aliens = []
         self.exits = []
         self.items = []
     def add_exit(self, exit_name, destination):
@@ -23,10 +23,10 @@ class Planet:
         self.items.append(item)
     def remove_item(self, item):
         self.items.remove(item)
-    def add_monster(self, monster):
-        self.monsters.append(monster)
-    def remove_monster(self, monster):
-        self.monsters.remove(monster)
+    def add_alien(self, alien):
+        self.aliens.append(alien)
+    def remove_alien(self, alien):
+        self.aliens.remove(alien)
     def has_items(self):
         return self.items != []
     def get_item_by_name(self, name):
@@ -34,10 +34,10 @@ class Planet:
             if i.name.lower() == name.lower():
                 return i
         return False
-    def has_monsters(self):
-        return self.monsters != []
-    def get_monster_by_name(self, name):
-        for i in self.monsters:
+    def has_aliens(self):
+        return self.aliens != []
+    def get_alien_by_name(self, name):
+        for i in self.aliens:
             if i.name.lower() == name.lower():
                 return i
         return False
