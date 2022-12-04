@@ -2,10 +2,14 @@ import random
 import updater
 
 class Alien:
-    def __init__(self, name, health, planet):
+    def __init__(self, name, species, health, planet, is_pre_warp, hostility, description=""):
         self.name = name
+        self.species = species
         self.health = health
         self.planet = planet
+        self.is_pre_warp = is_pre_warp  # Bool
+        self.hostility = hostility  # Float between 0-1
+        self.description = description
         planet.add_alien(self)
         updater.register(self)
     def update(self):
