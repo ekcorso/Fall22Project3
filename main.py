@@ -1,7 +1,7 @@
 from planet import Planet
 from player import Player
 from item import Item
-from monster import Monster
+from alien import Alien
 import os
 import updater
 
@@ -19,7 +19,7 @@ def create_world():
     i = Item("Rock", "This is just a rock.")
     i.put_on_planet(b)
     player.location = a
-    Monster("Bob the monster", 20, b)
+    Alien("Bob the alien", 20, b)
 
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -28,9 +28,9 @@ def print_situation():
     clear()
     print(player.location.desc)
     print()
-    if player.location.has_monsters():
-        print("This planet is inhabited by the following monsters:")
-        for m in player.location.monsters:
+    if player.location.has_aliens():
+        print("This planet is inhabited by the following aliens:")
+        for m in player.location.aliens:
             print(m.name)
         print()
     if player.location.has_items():
@@ -92,11 +92,11 @@ if __name__ == "__main__":
                     playing = False
                 case "attack":
                     target_name = command[7:]
-                    target = player.location.get_monster_by_name(target_name)
+                    target = player.location.get_alien_by_name(target_name)
                     if target != False:
-                        player.attack_monster(target)
+                        player.attack_alien(target)
                     else:
-                        print("No such monster.")
+                        print("No such alien.")
                         command_success = False
                 case other:
                     print("Not a valid command")

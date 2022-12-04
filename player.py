@@ -29,17 +29,17 @@ class Player:
             print(i.name)
         print()
         input("Press enter to continue...")
-    def attack_monster(self, mon):
+    def attack_alien(self, alien):
         clear()
-        print("You are attacking " + mon.name)
+        print("You are attacking " + alien.name)
         print()
         print("Your health is " + str(self.health) + ".")
-        print(mon.name + "'s health is " + str(mon.health) + ".")
+        print(alien.name + "'s health is " + str(alien.health) + ".")
         print()
-        if self.health > mon.health:
-            self.health -= mon.health
+        if self.health > alien.health:
+            self.health -= alien.health
             print("You win. Your health is now " + str(self.health) + ".")
-            mon.die()
+            alien.die()
         else:
             print("You lose.")
             self.alive = False
