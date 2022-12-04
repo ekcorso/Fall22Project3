@@ -19,7 +19,10 @@ def create_world():
     i = Item("Rock", "This is just a rock.")
     i.put_on_planet(b)
     player.location = a
-    Alien("Bob the alien", 20, b)
+    # Note that the line-break below will need to be fixed
+    Alien("Quark", "Ferengi", 20, b, False, 0.1,
+            "This species prizes business acumen. While they are not inherently hostile, \
+            they will persue profit at all costs in most negotiations.")
 
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -31,7 +34,7 @@ def print_situation():
     if player.location.has_aliens():
         print("This planet is inhabited by the following aliens:")
         for m in player.location.aliens:
-            print(m.name)
+            print(f"{m.name}: {m.species}. {m.description}")
         print()
     if player.location.has_items():
         print("This planet has the following items:")
