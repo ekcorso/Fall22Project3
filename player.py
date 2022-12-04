@@ -1,7 +1,9 @@
 import os
 
+
 def clear():
-    os.system('cls' if os.name == 'nt' else 'clear')
+    os.system("cls" if os.name == "nt" else "clear")
+
 
 class Player:
     def __init__(self):
@@ -9,6 +11,7 @@ class Player:
         self.items = []
         self.health = 50
         self.alive = True
+
     # goes in specified direction if possible, returns True
     # if not possible returns False
     def go_direction(self, direction):
@@ -17,10 +20,12 @@ class Player:
             self.location = new_location
             return True
         return False
+
     def pickup(self, item):
         self.items.append(item)
         item.loc = self
         self.location.remove_item(item)
+
     def show_inventory(self):
         clear()
         print("You are currently carrying:")
@@ -29,6 +34,7 @@ class Player:
             print(i.name)
         print()
         input("Press enter to continue...")
+
     def attack_alien(self, alien):
         clear()
         print("You are attacking " + alien.name)
@@ -45,4 +51,3 @@ class Player:
             self.alive = False
         print()
         input("Press enter to continue...")
-
