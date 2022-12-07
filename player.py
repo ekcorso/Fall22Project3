@@ -51,3 +51,11 @@ class Player:
             self.alive = False
         print()
         input("Press enter to continue...")
+
+    def get_status(self):
+        """Returns a string with the player's current stats"""
+        item_list = self.items if len(self.items) != 0 else "Empty"
+        status_str = (
+            f"Health: {self.health}. Location: {self.location.desc}. Items: {item_list}."
+        )
+        return status_str

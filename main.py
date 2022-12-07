@@ -136,6 +136,10 @@ if __name__ == "__main__":
             if len(command_words) == 0:
                 continue
             match command_words[0].lower():
+                case "me":
+                    print(player.get_status())
+                    print()
+                    command_success = False
                 case "go":  # cannot handle multi-word directions
                     okay = player.go_direction(command_words[1])
                     if okay:
