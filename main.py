@@ -13,6 +13,8 @@ def create_world():
     b = Planet("You are on Andoria")
     c = Planet("You are on Vulcan")
     d = Planet("You are on Betazed")
+    e = Planet("You are on Khitomer")
+    f = Planet("You are on Dytallix B")
     Planet.connect_planets(a, "east", b, "west")
     Planet.connect_planets(c, "east", d, "west")
     Planet.connect_planets(a, "north", c, "south")
