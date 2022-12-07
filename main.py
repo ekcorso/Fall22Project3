@@ -20,7 +20,7 @@ def create_world():
     i = Item("Rock", "This is just a rock.")
     i.put_on_planet(b)
     player.location = a
-    # Note that the line-break below will need to be fixed
+
     Alien(
         "Quark",
         "Ferengi",
@@ -29,9 +29,58 @@ def create_world():
         False,
         0.1,
         "This species prizes business acumen. While Ferengi are not inherently hostile, they will persue profit at "
-        "all costs in most negotiations.",
+        "all costs in most negotiations. Of course, it's hard not to miss thier very large ears too.",
     )
-
+    Alien(
+        "Shras",
+        "Andorian",
+        20,
+        b,
+        False,
+        0.1,
+        "Andorians are militaristic species-- but they never fight without reason, and they despise dishonesy."
+    )
+    Alien(
+        "Sarek",
+        "Vulcan",
+        20,
+        c,
+        False,
+        0,
+        "This species values logic and self-control very highly. Vulcans are known for always behaving logically, and "
+        "for never showing emotions, at least not directly. They have long been members of the Federation and human "
+        "allies.",
+    )
+    Alien(
+        "Deanna Troi",
+        "Betazed",
+        20,
+        d,
+        False,
+        0,
+        "Known for being telegraphic, Betazoids are often also able to project their thoughts and sometimes even "
+        "maniplate others with them.."
+    )
+    Alien(
+        "Tomalek",
+        "Romulan",
+        20,
+        e,
+        False,
+        5,
+        "This species is violent, deceitful, and Xenophobic. Alternating between hostility and isolationism, Romulans "
+        "will still resort to diplomacy ocassionally when the situation calls for it."
+    )
+    Alien(
+        "2 of 128",
+        "Borg",
+        50,
+        f,
+        False,
+        100,
+        "The Borg are an entirely collective species of cybernetic humanoid species. When they encounter a new species "
+        "they assimilate thier biological and technological distinctiveness. Resistance is (generally) futile."
+    )
 
 def clear():
     os.system("cls" if os.name == "nt" else "clear")
