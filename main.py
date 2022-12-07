@@ -31,7 +31,7 @@ def create_world():
         20,
         a,
         False,
-        0.1,
+        0.25,
         "This species prizes business acumen. While Ferengi are not inherently hostile, they will persue profit at "
         "all costs in most negotiations. Of course, it's hard not to miss thier very large ears too.",
     )
@@ -41,7 +41,7 @@ def create_world():
         20,
         b,
         False,
-        0.1,
+        0.15,
         "Andorians are militaristic species-- but they never fight without reason, and they despise dishonesy."
     )
     Alien(
@@ -61,7 +61,7 @@ def create_world():
         20,
         d,
         False,
-        0,
+        .15,
         "Known for being telegraphic, Betazoids are often also able to project their thoughts and sometimes even "
         "maniplate others with them.."
     )
@@ -71,7 +71,7 @@ def create_world():
         20,
         e,
         False,
-        5,
+        .7,
         "This species is violent, deceitful, and Xenophobic. Alternating between hostility and isolationism, Romulans "
         "will still resort to diplomacy ocassionally when the situation calls for it."
     )
@@ -81,7 +81,7 @@ def create_world():
         50,
         f,
         False,
-        100,
+        1,
         "The Borg are an entirely collective species of cybernetic humanoid species. When they encounter a new species "
         "they assimilate thier biological and technological distinctiveness. Resistance is (generally) futile."
     )
