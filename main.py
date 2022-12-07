@@ -19,6 +19,8 @@ def create_world():
     Planet.connect_planets(c, "east", d, "west")
     Planet.connect_planets(a, "north", c, "south")
     Planet.connect_planets(b, "north", d, "south")
+    Planet.connect_planets(e, "south", b, "north")
+    Planet.connect_planets(f, "west", e, "east")
     i = Item("Rock", "This is just a rock.")
     i.put_on_planet(b)
     player.location = a
