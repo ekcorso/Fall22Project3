@@ -9,10 +9,10 @@ player = Player()
 
 
 def create_world():
-    a = Planet("You are on planet 1")
-    b = Planet("You are on planet 2")
-    c = Planet("You are on planet 3")
-    d = Planet("You are on planet 4")
+    a = Planet("You are on Ferenginar")
+    b = Planet("You are on Andoria")
+    c = Planet("You are on Vulcan")
+    d = Planet("You are on Betazed")
     Planet.connect_planets(a, "east", b, "west")
     Planet.connect_planets(c, "east", d, "west")
     Planet.connect_planets(a, "north", c, "south")
