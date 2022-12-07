@@ -9,12 +9,12 @@ player = Player()
 
 
 def create_world():
-    a = Planet("You are on Ferenginar")
-    b = Planet("You are on Andoria")
-    c = Planet("You are on Vulcan")
-    d = Planet("You are on Betazed")
-    e = Planet("You are on Khitomer")
-    f = Planet("You are on Dytallix B")
+    a = Planet("Ferenginar")
+    b = Planet("Andoria")
+    c = Planet("Vulcan")
+    d = Planet("Betazed")
+    e = Planet("Khitomer")
+    f = Planet("Dytallix B")
     Planet.connect_planets(a, "east", b, "west")
     Planet.connect_planets(c, "east", d, "west")
     Planet.connect_planets(a, "north", c, "south")
@@ -92,7 +92,7 @@ def clear():
 
 def print_situation():
     clear()
-    print(player.location.desc)
+    print(f"You are on {player.location.desc}")
     print()
     if player.location.has_aliens():
         print("This planet is inhabited by the following aliens:")
