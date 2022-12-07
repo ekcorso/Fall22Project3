@@ -9,29 +9,82 @@ player = Player()
 
 
 def create_world():
-    a = Planet("You are on planet 1")
-    b = Planet("You are on planet 2")
-    c = Planet("You are on planet 3")
-    d = Planet("You are on planet 4")
+    a = Planet("You are on Ferenginar")
+    b = Planet("You are on Andoria")
+    c = Planet("You are on Vulcan")
+    d = Planet("You are on Betazed")
+    e = Planet("You are on Khitomer")
+    f = Planet("You are on Dytallix B")
     Planet.connect_planets(a, "east", b, "west")
     Planet.connect_planets(c, "east", d, "west")
     Planet.connect_planets(a, "north", c, "south")
     Planet.connect_planets(b, "north", d, "south")
+    Planet.connect_planets(e, "south", b, "north")
+    Planet.connect_planets(f, "west", e, "east")
     i = Item("Rock", "This is just a rock.")
     i.put_on_planet(b)
     player.location = a
-    # Note that the line-break below will need to be fixed
+
     Alien(
         "Quark",
         "Ferengi",
         20,
         a,
         False,
-        0.1,
+        0.25,
         "This species prizes business acumen. While Ferengi are not inherently hostile, they will persue profit at "
-        "all costs in most negotiations.",
+        "all costs in most negotiations. Of course, it's hard not to miss thier very large ears too.",
     )
-
+    Alien(
+        "Shras",
+        "Andorian",
+        20,
+        b,
+        False,
+        0.15,
+        "Andorians are militaristic species-- but they never fight without reason, and they despise dishonesy."
+    )
+    Alien(
+        "Sarek",
+        "Vulcan",
+        20,
+        c,
+        False,
+        0,
+        "This species values logic and self-control very highly. Vulcans are known for always behaving logically, and "
+        "for never showing emotions, at least not directly. They have long been members of the Federation and human "
+        "allies.",
+    )
+    Alien(
+        "Deanna Troi",
+        "Betazed",
+        20,
+        d,
+        False,
+        .15,
+        "Known for being telegraphic, Betazoids are often also able to project their thoughts and sometimes even "
+        "maniplate others with them.."
+    )
+    Alien(
+        "Tomalek",
+        "Romulan",
+        20,
+        e,
+        False,
+        .7,
+        "This species is violent, deceitful, and Xenophobic. Alternating between hostility and isolationism, Romulans "
+        "will still resort to diplomacy ocassionally when the situation calls for it."
+    )
+    Alien(
+        "2 of 128",
+        "Borg",
+        50,
+        f,
+        False,
+        1,
+        "The Borg are an entirely collective species of cybernetic humanoid species. When they encounter a new species "
+        "they assimilate thier biological and technological distinctiveness. Resistance is (generally) futile."
+    )
 
 def clear():
     os.system("cls" if os.name == "nt" else "clear")
