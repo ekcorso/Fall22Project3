@@ -63,7 +63,7 @@ class Player:
                     item_str += f"{str(item)}, "
                 else:
                     item_str += f"{str(item)}"
-            index += 1
+                index += 1
         else:
             item_str = "Empty"
         status_str = (
