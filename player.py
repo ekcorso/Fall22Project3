@@ -51,3 +51,22 @@ class Player:
             self.alive = False
         print()
         input("Press enter to continue...")
+
+    def get_status(self):
+        """Returns a string with the player's current stats"""
+        mapped_list = [item.name for item in self.items]
+        item_str = ""
+        if len(mapped_list) != 0:
+            index = 0
+            for item in mapped_list:
+                if index != len(mapped_list) - 1:
+                    item_str += f"{str(item)}, "
+                else:
+                    item_str += f"{str(item)}"
+                index += 1
+        else:
+            item_str = "Empty"
+        status_str = (
+            f"Health: {self.health}. Location: {self.location.desc}. Items: {item_str}."
+        )
+        return status_str
