@@ -9,6 +9,7 @@ player = Player()
 
 
 def create_world():
+    # Set up planets
     a = Planet("Ferenginar")
     b = Planet("Andoria")
     c = Planet("Vulcan")
@@ -21,10 +22,15 @@ def create_world():
     Planet.connect_planets(b, "north", d, "south")
     Planet.connect_planets(e, "south", b, "north")
     Planet.connect_planets(f, "west", e, "east")
+
+    # Add some loot to the world
     i = Item("Rock", "This is just a rock.")
     i.put_on_planet(b)
+    
+    # Player starts here
     player.location = a
 
+    # Define some aliens
     Alien(
         "Quark",
         "Ferengi",
