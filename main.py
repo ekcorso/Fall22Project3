@@ -172,5 +172,7 @@ if __name__ == "__main__":
                 case other:
                     print("Not a valid command")
                     command_success = False
-        if time_passes == True:
-            updater.update_all()
+        # can uncomment this time_passes block when I decide what I want it to do. In the mean time,
+        # commenting it out fixes the duplicate alients bug
+        # if time_passes == True:
+            # updater.update_all()

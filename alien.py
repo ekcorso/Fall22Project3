@@ -17,6 +17,7 @@ class Alien:
         updater.register(self)
 
     def update(self):
+        # this is what is causing the aliens to move around and sometimes have multiple in one room
         if random.random() < 0.5:
             self.move_to(self.planet.random_neighbor())
 
