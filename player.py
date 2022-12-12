@@ -11,6 +11,7 @@ class Player:
         self.items = []
         self.health = 50
         self.alive = True
+        self.shields_raised = False
 
     # goes in specified direction if possible, returns True
     # if not possible returns False
@@ -20,6 +21,12 @@ class Player:
             self.location = new_location
             return True
         return False
+
+    def raise_shields(self):
+        self.shields_raised = True
+
+    def lower_shields(self):
+        self.shields_raised = False
 
     def pickup(self, item):
         self.items.append(item)
