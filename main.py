@@ -212,6 +212,8 @@ if __name__ == "__main__":
                     if found_item is False:
                         print("Hmmm it doesn't look like you have that item...")
                     command_success = False
+                case "quit":
+                    playing = False
                 case "attack":
                     target_name = command[7:]
                     target = player.location.get_alien_by_name(target_name)
