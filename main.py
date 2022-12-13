@@ -161,6 +161,8 @@ if __name__ == "__main__":
                     show_help()
                 case "exit":
                     playing = False
+                case "quit":
+                    playing = False
                 case "attack":
                     target_name = command[7:]
                     target = player.location.get_alien_by_name(target_name)
