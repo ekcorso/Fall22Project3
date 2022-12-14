@@ -63,7 +63,8 @@ class Player:
             coin_toss = coin_toss_outcome()
             if coin_toss >= .8:
                 total_points_lost += 5  # a slap on the hand from Starfleet
-        if self.health > total_points_lost:
+        self.health -= total_points_lost
+        if self.health > 0:
             print("You win. Your health is now " + str(self.health) + ".")
             alien.die()
         else:
