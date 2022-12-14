@@ -42,7 +42,7 @@ class Player:
         print()
         input("Press enter to continue...")
 
-    def attack_alien(self, alien):
+    def attack_alien(self, alien, rigged_outcome=None):
         # let's incorporate losing diplomacy points here, as well as using weapons, taking less damage if
         # the shields are up (the player will need to manually raise shields before an attack)
         # will also need an is_pre_warp check
@@ -52,11 +52,15 @@ class Player:
         print("Your health is " + str(self.health) + ".")
         print(alien.name + "'s health is " + str(alien.health) + ".")
         print()
+        if rigged_outcome is None:
+            coin_toss_outcome = lambda: random.random()
+        else:
+            coin_toss_outcome = rigged_outcome
         total_points_lost = alien.health
         if self.shields_raised:
             total_points_lost -= 10
         if alien.is_pre_warp:
-            coin_toss = random.random()
+            coin_toss = coin_toss_outcome()
             if coin_toss >= .8:
                 total_points_lost += 5  # a slap on the hand from Starfleet
         if self.health > total_points_lost:
