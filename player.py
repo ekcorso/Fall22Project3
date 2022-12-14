@@ -1,5 +1,5 @@
 import os
-
+import random
 
 def clear():
     os.system("cls" if os.name == "nt" else "clear")
@@ -43,14 +43,19 @@ class Player:
         input("Press enter to continue...")
 
     def attack_alien(self, alien):
+        # let's incorporate losing diplomacy points here, as well as using weapons, taking less damage if
+        # the shields are up (the player will need to manually raise shields before an attack)
+        # will also need an is_pre_warp check
         clear()
         print("You are attacking " + alien.name)
         print()
         print("Your health is " + str(self.health) + ".")
         print(alien.name + "'s health is " + str(alien.health) + ".")
         print()
-        if self.health > alien.health:
-            self.health -= alien.health
+        total_points_lost = alien.health
+        if self.shields_raised:
+            total_points_lost -= 10
+        if self.health > total_points_lost:
             print("You win. Your health is now " + str(self.health) + ".")
             alien.die()
         else:
