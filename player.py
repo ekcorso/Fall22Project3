@@ -9,7 +9,7 @@ class Player:
     def __init__(self):
         self.location = None
         self.items = []
-        self.health = 50
+        self.health = 100
         self.alive = True
         self.shields_raised = False
 
