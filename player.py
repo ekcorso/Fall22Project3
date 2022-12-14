@@ -55,6 +55,10 @@ class Player:
         total_points_lost = alien.health
         if self.shields_raised:
             total_points_lost -= 10
+        if alien.is_pre_warp:
+            coin_toss = random.random()
+            if coin_toss >= .8:
+                total_points_lost += 5  # a slap on the hand from Starfleet
         if self.health > total_points_lost:
             print("You win. Your health is now " + str(self.health) + ".")
             alien.die()
