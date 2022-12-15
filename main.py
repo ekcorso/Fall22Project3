@@ -26,7 +26,24 @@ def create_world():
     # Add some loot to the world
     i = Item("Rock", "This is just a rock.")
     i.put_on_planet(b)
-    
+    dilithium = Item("Dilithium Crystals", "Initially a scarce resource, dilithium crystals were shown to be an "
+                     "essential component for a starship's faster than light drive, or warp drive, since they were "
+                     "necessary to regulate the matter-antimatter reactions needed to generate the required energy.")
+    cordrazine = Item("Cordrazine", "This is a powerful stimulant used to revive patients in an emergency. Overdoses "
+                      "cause hallucinations, madness and death.")
+    latinum = Item("Gold-pressed latinum", "Latinum is a medium of exchange or currency used by the Ferengi and others. "
+                   "Latinum was useful as a medium of exchange, unlike the (worthless) gold in which it was enclosed, "
+                   "because it is impossible to replicate.")
+    trellium = Item("Trellium-D", "Trellium-D is an alloy used in the Delphic Expanse as a protection against spatial "
+                    "anomalies.")
+    tritanium = Item("Tritanium", "A very common item, tritanium is an extremely hard alloy used in starship hulls "
+                     "and many hand-held tools.")
+    dilithium.put_on_planet(a)
+    cordrazine.put_on_planet(b)
+    latinum.put_on_planet(d)
+    trellium.put_on_planet(e)
+    tritanium.put_on_planet(c)
+
     # Player starts here
     player.location = a
 
@@ -108,7 +125,7 @@ def print_situation():
     if player.location.has_items():
         print("This planet has the following items:")
         for i in player.location.items:
-            print(i.name)
+            print(f"{i.name} -- {i.desc}")
         print()
     print("You can go in the following directions:")
     for e in player.location.exit_names():
