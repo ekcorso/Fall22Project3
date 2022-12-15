@@ -121,6 +121,8 @@ def show_help():
     print("go <direction> -- moves you in the given direction")
     print("inventory -- opens your inventory")
     print("pickup <item> -- picks up the item")
+    print("raise shields -- protect yourself in case of attack")
+    print("lower shields -- lower your shields after an attack")
     print("quit -- quits the game")
     print()
     input("Press enter to continue...")
