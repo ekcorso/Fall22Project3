@@ -169,6 +169,19 @@ if __name__ == "__main__":
                     show_help()
                 case "exit":
                     playing = False
+                case "raise":
+                    # raise shields
+                    print("Your shields are up")
+                    print()
+                    player.raise_shields()
+                    command_success = False
+                    # input("Press enter to continue...")
+                case "lower":
+                    # lower shields
+                    print("Your shields are down")
+                    print()
+                    player.lower_shields()
+                    command_success = False
                 case "attack":
                     target_name = command[7:]
                     target = player.location.get_alien_by_name(target_name)
