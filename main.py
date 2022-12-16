@@ -23,10 +23,8 @@ def create_world():
     Planet.connect_planets(e, "south", b, "north")
     Planet.connect_planets(f, "west", e, "east")
 
-    # Add some loot to the world
-    i = Item("Rock", "This is just a rock.")
-    i.put_on_planet(b)
-    dilithium = Item("Dilithium Crystals", "Initially a scarce resource, dilithium crystals were shown to be an "
+    # Add some resources to the world
+    dilithium = Item("Dilithium Crystal", "Initially a scarce resource, dilithium crystals were shown to be an "
                      "essential component for a starship's faster than light drive, or warp drive, since they were "
                      "necessary to regulate the matter-antimatter reactions needed to generate the required energy.")
     cordrazine = Item("Cordrazine", "This is a powerful stimulant used to revive patients in an emergency. Overdoses "
