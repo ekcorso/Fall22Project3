@@ -4,7 +4,7 @@ import updater
 
 class Alien:
     def __init__(
-        self, name, species, health, planet, is_pre_warp, hostility, description=""
+        self, name, species, health, planet, is_pre_warp, hostility, resource_needed, description=""
     ):
         self.name = name
         self.species = species
@@ -13,6 +13,8 @@ class Alien:
         self.is_pre_warp = is_pre_warp  # Bool
         self.hostility = hostility  # Float between 0-1
         self.description = description
+        self.resource_needed = resource_needed
+        self.negotiation_attempted = False
         planet.add_alien(self)
         updater.register(self)
 

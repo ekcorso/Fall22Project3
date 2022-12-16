@@ -10,6 +10,7 @@ class Player:
         self.location = None
         self.items = []
         self.health = 100
+        self.diplomacy = 50
         self.alive = True
         self.shields_raised = False
 
@@ -32,6 +33,18 @@ class Player:
         self.items.append(item)
         item.loc = self
         self.location.remove_item(item)
+
+       
+
+    def give_item(self, item, alien):
+        if item in self.items and alien.resource_needed == item:
+            print(f"You are giving {alien.name} the {item.name}.")
+            print()
+            self.items.remove(item)
+            alien.has_resource_needed = True
+            self.diplomacy += 20
+            print("You have completed this part of your diplomatic mission.")
+            input("Press enter to keep exploring the galaxy...")
 
     def show_inventory(self):
         clear()

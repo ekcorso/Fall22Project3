@@ -110,3 +110,27 @@ def test_shields_raised():
     my_player.lower_shields()
     my_player.attack_alien(nog)
     assert my_player.health == 70, "Incorrect damange with shields lowered"
+
+def test_give_item():
+    my_player = player.Player()
+    vulcan = planet.Planet("Vulcan")
+    my_player.location = vulcan
+
+    quark = alien.Alien(
+        "Quark",
+        "Ferengi",
+        20,
+        vulcan,
+        False,
+        0.25,
+        "This species prizes business acumen. While Ferengi are not inherently hostile, they will persue profit at "
+        "all costs in most negotiations. Of course, it's hard not to miss thier very large ears too.",
+    )
+   
+    latinum = item.Item("Gold-pressed latinum", "Latinum is a medium of exchange or currency used by the Ferengi "
+                        "and others. Latinum was useful as a medium of exchange, unlike the (worthless) gold in "
+                        " which it was enclosed, because it is impossible to replicate.")
+
+    vulcan.add_item(latinum)
+    my_player.pickup(latinum)
+    my_player.give_item(my_player.items[0], quark)
