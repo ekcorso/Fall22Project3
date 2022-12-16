@@ -184,7 +184,7 @@ if __name__ == "__main__":
     create_world()
     playing = True
     print_initial_setup()
-    while playing and player.alive:
+    while playing and player.alive and not player.has_won:
         print_situation()
         command_success = False
         time_passes = False

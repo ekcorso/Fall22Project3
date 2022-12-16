@@ -13,6 +13,7 @@ class Player:
         self.diplomacy = 50
         self.alive = True
         self.shields_raised = False
+        self.has_won = False
 
     # goes in specified direction if possible, returns True
     # if not possible returns False
@@ -40,6 +41,7 @@ class Player:
         alien = self.location.aliens[0]  # there should be only 1
         print(f"You're attempting to negotiate with {alien.name}...")
         self.diplomacy += 15
+        self.check_for_win_condition()
         alien.request_resources() 
 
     def give_item(self, item, alien):
@@ -49,7 +51,8 @@ class Player:
             self.items.remove(item)
             alien.has_resource_needed = True
             self.diplomacy += 20
-            print("You have completed this part of your diplomatic mission.")
+            self.check_for_win_condition()
+            print("You have completed this part of your mission.")
             input("Press enter to keep exploring the galaxy...")
         else:
             print(f"That's not the item that {alien.name} is looking for.")
@@ -81,12 +84,14 @@ class Player:
         if alien.negotiation_attempted is False:
             # player will gain points for negotiating AND lose points for not doing so
             self.diplomacy -= 25
+            self.check_for_win_condition()
         if self.shields_raised:
             total_points_lost -= 10
         if alien.is_pre_warp:
             coin_toss = coin_toss_outcome()
             if coin_toss >= .8:
                 self.diplomacy -= 10  # a slap on the hand from Starfleet
+                self.check_for_win_condition()
         self.health -= total_points_lost
         if self.health > 0:
             print(f"You win. Your health is now {self.health}. Your diplomacy is now {self.diplomacy}.")
@@ -118,3 +123,10 @@ class Player:
             f"Health: {self.health}. Location: {self.location.desc}. Items: {item_str}."
         )
         return status_str
+    def check_for_win_condition(self):
+        if self.diplomacy >= 115:
+            print("You won! Getting to make first contact and see things most humans will never see "
+                  "is a reward unto itself. You've completed your mission and can return home.")
+            print()
+            input("Press enter...")
+
