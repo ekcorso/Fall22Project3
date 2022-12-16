@@ -217,6 +217,9 @@ if __name__ == "__main__":
                     if found_item is False:
                         print("Hmmm it doesn't look like you have that item...")
                     command_success = False
+                case "negotiate":
+                    player.negotiate()
+                    command_success = False
                 case "quit":
                     playing = False
                 case "attack":

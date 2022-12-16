@@ -33,6 +33,7 @@ class Alien:
         updater.deregister(self)
 
     def request_resources(self):
-        print(self.resource_request)
-        print(f"Can you give {self.name} what they are seeking?")
+        print()
+        print(f"{self.name}: \"{self.resource_request}\"")
+        print()
         # print("Hint: try \"give\" + the name of the item being requested")

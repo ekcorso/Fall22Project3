@@ -34,8 +34,13 @@ class Player:
         item.loc = self
         self.location.remove_item(item)
         print(f"You've beamed up the {item.name} and put it in the cargo bay.")
+        print()
 
-       
+    def negotiate(self):
+        alien = self.location.aliens[0]  # there should be only 1
+        print(f"You're attempting to negotiate with {alien.name}...")
+        self.diplomacy += 15
+        alien.request_resources() 
 
     def give_item(self, item, alien):
         if item in self.items and alien.resource_needed == item:
