@@ -127,8 +127,10 @@ class Player:
         return status_str
     def check_for_win_condition(self):
         if self.diplomacy >= 115 and len(self.planets_visited) >= 6:
+            self.has_won = True
             print("You won! Getting to make first contact and see things most humans will never see "
                   "is a reward unto itself. You've completed your mission and can return home.")
             print()
             input("Press enter...")
+            
 
