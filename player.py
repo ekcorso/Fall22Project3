@@ -14,6 +14,7 @@ class Player:
         self.alive = True
         self.shields_raised = False
         self.has_won = False
+        self.planets_visited = set()
 
     # goes in specified direction if possible, returns True
     # if not possible returns False
@@ -21,6 +22,7 @@ class Player:
         new_location = self.location.get_destination(direction.lower())
         if new_location is not None:
             self.location = new_location
+            self.planets_visited.add(new_location)  # only adds the new location if it is unique
             return True
         return False
 
@@ -124,7 +126,7 @@ class Player:
         )
         return status_str
     def check_for_win_condition(self):
-        if self.diplomacy >= 115:
+        if self.diplomacy >= 115 and len(self.planets_visited) >= 6:
             print("You won! Getting to make first contact and see things most humans will never see "
                   "is a reward unto itself. You've completed your mission and can return home.")
             print()
