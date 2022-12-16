@@ -53,6 +53,7 @@ class Player:
             input("Press enter to keep exploring the galaxy...")
         else:
             print(f"That's not the item that {alien.name} is looking for.")
+            print()
             input("Press enter to continue or try again...")
 
     def show_inventory(self):
@@ -88,7 +89,7 @@ class Player:
                 self.diplomacy -= 10  # a slap on the hand from Starfleet
         self.health -= total_points_lost
         if self.health > 0:
-            print("You win. Your health is now " + str(self.health) + ".")
+            print(f"You win. Your health is now {self.health}. Your diplomacy is now {self.diplomacy}.")
             alien.die()
         else:
             print("You lose.")
