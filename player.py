@@ -34,8 +34,13 @@ class Player:
         item.loc = self
         self.location.remove_item(item)
         print(f"You've beamed up the {item.name} and put it in the cargo bay.")
+        print()
 
-       
+    def negotiate(self):
+        alien = self.location.aliens[0]  # there should be only 1
+        print(f"You're attempting to negotiate with {alien.name}...")
+        self.diplomacy += 15
+        alien.request_resources() 
 
     def give_item(self, item, alien):
         if item in self.items and alien.resource_needed == item:
@@ -48,6 +53,7 @@ class Player:
             input("Press enter to keep exploring the galaxy...")
         else:
             print(f"That's not the item that {alien.name} is looking for.")
+            print()
             input("Press enter to continue or try again...")
 
     def show_inventory(self):
@@ -83,10 +89,13 @@ class Player:
                 self.diplomacy -= 10  # a slap on the hand from Starfleet
         self.health -= total_points_lost
         if self.health > 0:
-            print("You win. Your health is now " + str(self.health) + ".")
+            print(f"You win. Your health is now {self.health}. Your diplomacy is now {self.diplomacy}.")
             alien.die()
         else:
-            print("You lose.")
+            print()
+            print("\"It is possible to commit no mistakes and still lose. That is not a weakness. That is life.\""
+                  "-- Captain Jean-Luc Picard")
+            print("(But the game is over now.)")
             self.alive = False
         print()
         input("Press enter to continue...")
