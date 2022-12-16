@@ -4,7 +4,7 @@ import updater
 
 class Alien:
     def __init__(
-        self, name, species, health, planet, is_pre_warp, resource_needed, description=""
+        self, name, species, health, planet, is_pre_warp, resource_needed, resource_request, description=""
     ):
         self.name = name
         self.species = species
@@ -13,6 +13,7 @@ class Alien:
         self.is_pre_warp = is_pre_warp  # Bool
         self.description = description
         self.resource_needed = resource_needed
+        self.resource_request = resource_request
         self.negotiation_attempted = False
         planet.add_alien(self)
         updater.register(self)
@@ -30,3 +31,8 @@ class Alien:
     def die(self):
         self.planet.remove_alien(self)
         updater.deregister(self)
+
+    def request_resources(self):
+        print(self.resource_request)
+        print(f"Can you give {self.name} what they are seeking?")
+        # print("Hint: try \"give\" + the name of the item being requested")
