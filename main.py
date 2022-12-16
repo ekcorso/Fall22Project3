@@ -21,8 +21,8 @@ def create_world():
     Planet.connect_planets(c, "east", d, "west")
     Planet.connect_planets(a, "north", c, "south")
     Planet.connect_planets(b, "north", d, "south")
-    Planet.connect_planets(e, "south", b, "north")
-    Planet.connect_planets(f, "west", e, "east")
+    Planet.connect_planets(e, "north", b, "south")
+    Planet.connect_planets(f, "east", e, "west")
 
     # Add some resources to the world
     dilithium = Item("Dilithium Crystal", "Initially a scarce resource, dilithium crystals were shown to be an "
