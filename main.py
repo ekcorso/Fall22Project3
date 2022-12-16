@@ -44,7 +44,7 @@ def create_world():
     tritanium.put_on_planet(c)
 
     # Player starts here
-    player.location = random.choice([a, b, c, d, e, f])
+    player.location = random.choice([a, b, c, d, e])
 
     # Define some aliens
     Alien(
@@ -167,10 +167,7 @@ def show_help():
     print()
     input("Press enter to continue...")
 
-
-if __name__ == "__main__":
-    create_world()
-    playing = True
+def print_initial_setup():
     print("Space: The final frontier.")
     print()
     print("You are the Captain of a starship. You are on a mission to explore strange new worlds, to seek out "
@@ -182,6 +179,11 @@ if __name__ == "__main__":
           "necessary.")
     print()
     input("Press enter to begin exploring...")
+
+if __name__ == "__main__":
+    create_world()
+    playing = True
+    print_initial_setup()
     while playing and player.alive:
         print_situation()
         command_success = False
