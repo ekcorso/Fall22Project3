@@ -59,6 +59,17 @@ def create_world():
         "all costs in most negotiations. Of course, it's hard not to miss thier very large ears too.",
     )
     Alien(
+        "Kes",
+        "Ocampa",
+        15,
+        b,
+        True,
+        0.25,
+        "The Ocampa are a humanoid, pre-warp species. After an accident damanged their planet's atmosphere they were"
+        "underground and only survived with the help of the Caretaker, a benevolent member of a more advanced species."
+    )
+
+    Alien(
         "Shras",
         "Andorian",
         20,
@@ -84,7 +95,7 @@ def create_world():
     Alien(
         "Lwaxana",
         "Betazed",
-        20,
+        15,
         d,
         False,
         dilithium,
@@ -97,7 +108,7 @@ def create_world():
     Alien(
         "Tomalek",
         "Romulan",
-        20,
+        30,
         e,
         False,
         trellium,
@@ -109,7 +120,7 @@ def create_world():
     Alien(
         "2 of 128",
         "Borg",
-        50,
+        90,
         f,
         False,
         None,
