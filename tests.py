@@ -71,10 +71,10 @@ def test_attacking_pre_warp():
 
     my_player.attack_alien(kes, pre_warp_penalty)
     assert vulcan.get_alien_by_name(kes.name) is False, "Kes didn't die"
-    assert my_player.health == 80, "Something is wrong with damage assessment with pre warp penality"
+    assert my_player.health == 85, "Something is wrong with damage assessment with pre warp penality"
     my_player.attack_alien(daggin, no_pre_warp_penalty)
     assert vulcan.get_alien_by_name(daggin.name) is False, "Daggin didn't die"
-    assert my_player.health == 65, "Something is wrong with damage assessment with no pre warp penality"
+    assert my_player.health == 70, "Something is wrong with damage assessment with no pre warp penality"
 
 
 def test_shields_raised():
