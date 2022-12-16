@@ -55,6 +55,7 @@ def create_world():
         a,
         False,
         0.25,
+        latinum,
         "This species prizes business acumen. While Ferengi are not inherently hostile, they will persue profit at "
         "all costs in most negotiations. Of course, it's hard not to miss thier very large ears too.",
     )
@@ -65,6 +66,7 @@ def create_world():
         b,
         False,
         0.15,
+        cordrazine,
         "Andorians are militaristic species-- but they never fight without reason, and they despise dishonesy."
     )
     Alien(
@@ -74,6 +76,7 @@ def create_world():
         c,
         False,
         0,
+        tritanium,
         "This species values logic and self-control very highly. Vulcans are known for always behaving logically, and "
         "for never showing emotions, at least not directly. They have long been members of the Federation and human "
         "allies.",
@@ -85,6 +88,7 @@ def create_world():
         d,
         False,
         .15,
+        dilithium,
         "Known for being telegraphic, Betazoids are often also able to project their thoughts and sometimes even "
         "maniplate others with them.."
     )
@@ -95,6 +99,7 @@ def create_world():
         e,
         False,
         .7,
+        trellium,
         "This species is violent, deceitful, and Xenophobic. Alternating between hostility and isolationism, Romulans "
         "will still resort to diplomacy ocassionally when the situation calls for it."
     )
