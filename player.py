@@ -45,6 +45,9 @@ class Player:
             self.diplomacy += 20
             print("You have completed this part of your diplomatic mission.")
             input("Press enter to keep exploring the galaxy...")
+        else:
+            print(f"That's not the item that {alien.name} is looking for.")
+            input("Press enter to continue or try again...")
 
     def show_inventory(self):
         clear()

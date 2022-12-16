@@ -143,6 +143,7 @@ def show_help():
     print("go <direction> -- moves you in the given direction")
     print("inventory -- opens your inventory")
     print("pickup <item> -- picks up the item")
+    print("give <item> -- gives this item to alien you are currently negotiating with")
     print("raise shields -- protect yourself in case of attack")
     print("lower shields -- lower your shields after an attack")
     print("quit -- quits the game")
@@ -197,12 +198,21 @@ if __name__ == "__main__":
                     print()
                     player.raise_shields()
                     command_success = False
-                    # input("Press enter to continue...")
                 case "lower":
                     # lower shields
                     print("Your shields are down")
                     print()
                     player.lower_shields()
+                    command_success = False
+                case "give":
+                    resource = command[5:]  # this is the item name str
+                    found_item = False
+                    for item in player.items:
+                        if item.name.lower() == resource.lower():
+                            player.give_item(item, player.location.aliens[0])
+                            found_item = True
+                    if found_item is False:
+                        print("Hmmm it doesn't look like you have that item...")
                     command_success = False
                 case "attack":
                     target_name = command[7:]
