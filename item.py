@@ -20,3 +20,17 @@ class Item:
     def put_on_planet(self, planet):
         self.loc = planet
         planet.add_item(self)
+
+# This class might be obsolete now
+class Weapon(Item):
+    def __init__(self, name, desc, damage):
+        super().__init__(name, desc)
+        self.damage = damage # amount of damage this weapon will do
+        self.amunition = 10 # num of times this weapon can be used
+
+    def fire(self, target):
+        if self.amunition != 0:
+            target.health -= self.damage
+            self.amunition -= 1
+            # the player should notice if their weapon stop working, so handling the "else" side of this check can be 
+            # done at the call site, if at all

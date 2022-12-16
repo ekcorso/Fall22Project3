@@ -1,5 +1,5 @@
 import os
-
+import random
 
 def clear():
     os.system("cls" if os.name == "nt" else "clear")
@@ -9,8 +9,10 @@ class Player:
     def __init__(self):
         self.location = None
         self.items = []
-        self.health = 50
+        self.health = 100
+        self.diplomacy = 50
         self.alive = True
+        self.shields_raised = False
 
     # goes in specified direction if possible, returns True
     # if not possible returns False
@@ -21,10 +23,32 @@ class Player:
             return True
         return False
 
+    def raise_shields(self):
+        self.shields_raised = True
+
+    def lower_shields(self):
+        self.shields_raised = False
+
     def pickup(self, item):
         self.items.append(item)
         item.loc = self
         self.location.remove_item(item)
+        print(f"You've beamed up the {item.name} and put it in the cargo bay.")
+
+       
+
+    def give_item(self, item, alien):
+        if item in self.items and alien.resource_needed == item:
+            print(f"You are giving {alien.name} the {item.name}.")
+            print()
+            self.items.remove(item)
+            alien.has_resource_needed = True
+            self.diplomacy += 20
+            print("You have completed this part of your diplomatic mission.")
+            input("Press enter to keep exploring the galaxy...")
+        else:
+            print(f"That's not the item that {alien.name} is looking for.")
+            input("Press enter to continue or try again...")
 
     def show_inventory(self):
         clear()
@@ -35,15 +59,30 @@ class Player:
         print()
         input("Press enter to continue...")
 
-    def attack_alien(self, alien):
+    def attack_alien(self, alien, rigged_outcome=None):
         clear()
         print("You are attacking " + alien.name)
         print()
         print("Your health is " + str(self.health) + ".")
         print(alien.name + "'s health is " + str(alien.health) + ".")
         print()
-        if self.health > alien.health:
-            self.health -= alien.health
+        # this is for testing purposes, so I can inject the desired outcome
+        if rigged_outcome is None:
+            coin_toss_outcome = lambda: random.random()
+        else:
+            coin_toss_outcome = rigged_outcome
+        total_points_lost = alien.health
+        if alien.negotiation_attempted is False:
+            # player will gain points for negotiating AND lose points for not doing so
+            self.diplomacy -= 25
+        if self.shields_raised:
+            total_points_lost -= 10
+        if alien.is_pre_warp:
+            coin_toss = coin_toss_outcome()
+            if coin_toss >= .8:
+                self.diplomacy -= 10  # a slap on the hand from Starfleet
+        self.health -= total_points_lost
+        if self.health > 0:
             print("You win. Your health is now " + str(self.health) + ".")
             alien.die()
         else:
