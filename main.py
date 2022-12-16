@@ -178,6 +178,8 @@ def print_initial_setup():
           "interacting with species that have not yet developed warp capabilities, even though it is sometimes "
           "necessary.")
     print()
+    print("Hint: type 'help' if you get stuck")
+    print()
     input("Press enter to begin exploring...")
 
 if __name__ == "__main__":
