@@ -1,8 +1,7 @@
-========================
 Star Trek Adventure Game
 ========================
 
-# forked from: https://github.com/dylanmc/Fall22Project3
+This was forked from: https://github.com/dylanmc/Fall22Project3
 
 To run this project, type:
 
@@ -10,7 +9,6 @@ To run this project, type:
 % python3 main.py
 ```
 
-=============
 Features Added
 =============
 
