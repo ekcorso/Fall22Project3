@@ -4,6 +4,7 @@ from item import Item
 from alien import Alien
 import os
 import updater
+import random
 
 player = Player()
 
@@ -43,7 +44,7 @@ def create_world():
     tritanium.put_on_planet(c)
 
     # Player starts here
-    player.location = a
+    player.location = random.choice([a, b, c, d, e, f])
 
     # Define some aliens
     Alien(
