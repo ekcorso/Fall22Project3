@@ -116,6 +116,9 @@ def test_give_item():
     vulcan = planet.Planet("Vulcan")
     my_player.location = vulcan
 
+    latinum = item.Item("Gold-pressed latinum", "Latinum is a medium of exchange or currency used by the Ferengi "
+                        "and others. Latinum was useful as a medium of exchange, unlike the (worthless) gold in "
+                        " which it was enclosed, because it is impossible to replicate.")
     quark = alien.Alien(
         "Quark",
         "Ferengi",
@@ -123,13 +126,11 @@ def test_give_item():
         vulcan,
         False,
         0.25,
+        latinum,
         "This species prizes business acumen. While Ferengi are not inherently hostile, they will persue profit at "
         "all costs in most negotiations. Of course, it's hard not to miss thier very large ears too.",
     )
-   
-    latinum = item.Item("Gold-pressed latinum", "Latinum is a medium of exchange or currency used by the Ferengi "
-                        "and others. Latinum was useful as a medium of exchange, unlike the (worthless) gold in "
-                        " which it was enclosed, because it is impossible to replicate.")
+
 
     vulcan.add_item(latinum)
     my_player.pickup(latinum)
