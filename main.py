@@ -171,6 +171,17 @@ def show_help():
 if __name__ == "__main__":
     create_world()
     playing = True
+    print("Space: The final frontier.")
+    print()
+    print("You are the Captain of a starship. You are on a mission to explore strange new worlds, to seek out "
+          "new life and new civilizations, to boldly go where no one has gone before.")
+    print()
+    print("Start by exploring as many planets as you can. You can interact with the alien species and artifacts you "
+          "find there, but beware: not all aliens are friendly. Also note that your Federation does not condone "
+          "interacting with species that have not yet developed warp capabilities, even though it is sometimes "
+          "necessary.")
+    print()
+    input("Press enter to begin exploring...")
     while playing and player.alive:
         print_situation()
         command_success = False
