@@ -21,6 +21,7 @@ class Item:
         self.loc = planet
         planet.add_item(self)
 
+# This class might be obsolete now
 class Weapon(Item):
     def __init__(self, name, desc, damage):
         super().__init__(name, desc)
