@@ -10,7 +10,7 @@ class Player:
         self.location = None
         self.items = []
         self.health = 100
-        self.diplomacy = 50
+        self.diplomacy = 0  # Would be nice to use a property observer here, like Swift's didSet
         self.alive = True
         self.shields_raised = False
         self.has_won = False
