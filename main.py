@@ -179,11 +179,11 @@ if __name__ == "__main__":
                 case "pickup":  # can handle multi-word objects
                     target_name = command[7:]  # everything after "pickup "
                     target = player.location.get_item_by_name(target_name)
-                    if target != False:
+                    if target is not False:
                         player.pickup(target)
                     else:
                         print("No such item.")
-                        command_success = False
+                    command_success = False
                 case "inventory":
                     player.show_inventory()
                 case "help":

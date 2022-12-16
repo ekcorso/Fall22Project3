@@ -33,6 +33,7 @@ class Player:
         self.items.append(item)
         item.loc = self
         self.location.remove_item(item)
+        print(f"You've beamed up the {item.name} and put it in the cargo bay.")
 
        
 
