@@ -37,8 +37,8 @@ def create_world():
                     "anomalies.")
     tritanium = Item("Tritanium", "A very common item, tritanium is an extremely hard alloy used in starship hulls "
                      "and many hand-held tools.")
-    dilithium.put_on_planet(a)
-    cordrazine.put_on_planet(b)
+    dilithium.put_on_planet(b)
+    cordrazine.put_on_planet(a)
     latinum.put_on_planet(d)
     trellium.put_on_planet(e)
     tritanium.put_on_planet(c)
