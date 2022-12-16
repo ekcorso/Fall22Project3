@@ -53,6 +53,7 @@ def create_world():
         a,
         False,
         latinum,
+        "I'll owe you a favor, Hu-mon, if you can lend me a few bars of latinum. Do we have a deal?",
         "This species prizes business acumen. While Ferengi are not inherently hostile, they will persue profit at "
         "all costs in most negotiations. Of course, it's hard not to miss thier very large ears too.",
     )
@@ -63,6 +64,8 @@ def create_world():
         b,
         False,
         cordrazine,
+        "My second-in-command was in an accident and needs emergency medical treatment. I'd be happy to set "
+        "aside our differences if you can give us a few vials of cordrazine to treat him. What do you say?",
         "Andorians are militaristic species-- but they never fight without reason, and they despise dishonesy."
     )
     Alien(
@@ -72,18 +75,22 @@ def create_world():
         c,
         False,
         tritanium,
+        "Our ship was damaged in battle and is badly in need of repair. Can you spare some tritanium to help us fix it?",
         "This species values logic and self-control very highly. Vulcans are known for always behaving logically, and "
         "for never showing emotions, at least not directly. They have long been members of the Federation and human "
         "allies.",
     )
     Alien(
-        "Deanna Troi",
+        "Lwaxana",
         "Betazed",
         20,
         d,
         False,
         dilithium,
-        "Known for being telegraphic, Betazoids are often also able to project their thoughts and sometimes even "
+        "Now Captain I know you can be reasonable about this. My ship's dilithium crystals have ceased to function ever "
+        "since we passed through the Rosette Nebula. I know you have a little extra dilithium on board, won't you be "
+        "a dear and share it with my ship? Come on, I know you will help us..",
+        "Known for being telepathic, Betazoids are often also able to project their thoughts and sometimes even "
         "maniplate others with them.."
     )
     Alien(
@@ -93,6 +100,8 @@ def create_world():
         e,
         False,
         trellium,
+        "My ship will be passing through the Delphic Expanse soon-- I don't know if we'll make it through the anomaly "
+        "unless we can get enough Trellium-D to fortify our vessle. Captain to captain, can you help me save my crew?",
         "This species is violent, deceitful, and Xenophobic. Alternating between hostility and isolationism, Romulans "
         "will still resort to diplomacy ocassionally when the situation calls for it."
     )
@@ -102,8 +111,10 @@ def create_world():
         50,
         f,
         False,
+        None,
+        "We are the Borg. Resistance is futile-- lower your shields and surrender. You will be assimilated",
         "The Borg are an entirely collective species of cybernetic humanoid species. When they encounter a new species "
-        "they assimilate thier biological and technological distinctiveness. Resistance is (generally) futile."
+        "they assimilate thier biological and technological distinctiveness. Resistance is generally futile."
     )
 
 def clear():
