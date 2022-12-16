@@ -4,6 +4,7 @@ from item import Item
 from alien import Alien
 import os
 import updater
+import random
 
 player = Player()
 
@@ -20,8 +21,8 @@ def create_world():
     Planet.connect_planets(c, "east", d, "west")
     Planet.connect_planets(a, "north", c, "south")
     Planet.connect_planets(b, "north", d, "south")
-    Planet.connect_planets(e, "south", b, "north")
-    Planet.connect_planets(f, "west", e, "east")
+    Planet.connect_planets(e, "north", b, "south")
+    Planet.connect_planets(f, "east", e, "west")
 
     # Add some resources to the world
     dilithium = Item("Dilithium Crystal", "Initially a scarce resource, dilithium crystals were shown to be an "
@@ -36,14 +37,14 @@ def create_world():
                     "anomalies.")
     tritanium = Item("Tritanium", "A very common item, tritanium is an extremely hard alloy used in starship hulls "
                      "and many hand-held tools.")
-    dilithium.put_on_planet(a)
-    cordrazine.put_on_planet(b)
+    dilithium.put_on_planet(b)
+    cordrazine.put_on_planet(a)
     latinum.put_on_planet(d)
     trellium.put_on_planet(e)
     tritanium.put_on_planet(c)
 
     # Player starts here
-    player.location = a
+    player.location = random.choice([a, b, c, d, e])
 
     # Define some aliens
     Alien(
@@ -58,16 +59,28 @@ def create_world():
         "all costs in most negotiations. Of course, it's hard not to miss thier very large ears too.",
     )
     Alien(
-        "Shras",
-        "Andorian",
-        20,
+        "Kes",
+        "Ocampa",
+        15,
         b,
-        False,
+        True,
         cordrazine,
-        "My second-in-command was in an accident and needs emergency medical treatment. I'd be happy to set "
-        "aside our differences if you can give us a few vials of cordrazine to treat him. What do you say?",
-        "Andorians are militaristic species-- but they never fight without reason, and they despise dishonesy."
+        "My brother was hurt and is badly in need of medical treatment. With all of your technological ability, can "
+        "you help us? Our doctor tells me that just one vial of cordrazine could save his life."
+        "The Ocampa are a humanoid, pre-warp species. After an accident damanged their planet's atmosphere they were"
+        "underground and only survived with the help of the Caretaker, a benevolent member of a more advanced species."
     )
+    # Alien(
+        # "Shras",
+        # "Andorian",
+        # 20,
+        # b,
+        # False,
+        # cordrazine,
+        # "My second-in-command was in an accident and needs emergency medical treatment. I'd be happy to set "
+        # "aside our differences if you can give us a few vials of cordrazine to treat him. What do you say?",
+        # "Andorians are militaristic species-- but they never fight without reason, and they despise dishonesy."
+    # )
     Alien(
         "Sarek",
         "Vulcan",
@@ -83,7 +96,7 @@ def create_world():
     Alien(
         "Lwaxana",
         "Betazed",
-        20,
+        15,
         d,
         False,
         dilithium,
@@ -96,7 +109,7 @@ def create_world():
     Alien(
         "Tomalek",
         "Romulan",
-        20,
+        30,
         e,
         False,
         trellium,
@@ -108,7 +121,7 @@ def create_world():
     Alien(
         "2 of 128",
         "Borg",
-        50,
+        90,
         f,
         False,
         None,
@@ -154,11 +167,24 @@ def show_help():
     print()
     input("Press enter to continue...")
 
+def print_initial_setup():
+    print("Space: The final frontier.")
+    print()
+    print("You are the Captain of a starship. You are on a mission to explore strange new worlds, to seek out "
+          "new life and new civilizations, to boldly go where no one has gone before.")
+    print()
+    print("Start by exploring as many planets as you can. You can interact with the alien species and artifacts you "
+          "find there, but beware: not all aliens are friendly. Also note that your Federation does not condone "
+          "interacting with species that have not yet developed warp capabilities, even though it is sometimes "
+          "necessary.")
+    print()
+    input("Press enter to begin exploring...")
 
 if __name__ == "__main__":
     create_world()
     playing = True
-    while playing and player.alive:
+    print_initial_setup()
+    while playing and player.alive and not player.has_won:
         print_situation()
         command_success = False
         time_passes = False
