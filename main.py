@@ -64,22 +64,23 @@ def create_world():
         15,
         b,
         True,
-        0.25,
+        cordrazine,
+        "My brother was hurt and is badly in need of medical treatment. With all of your technological ability, can "
+        "you help us? Our doctor tells me that just one vial of cordrazine could save his life."
         "The Ocampa are a humanoid, pre-warp species. After an accident damanged their planet's atmosphere they were"
         "underground and only survived with the help of the Caretaker, a benevolent member of a more advanced species."
     )
-
-    Alien(
-        "Shras",
-        "Andorian",
-        20,
-        b,
-        False,
-        cordrazine,
-        "My second-in-command was in an accident and needs emergency medical treatment. I'd be happy to set "
-        "aside our differences if you can give us a few vials of cordrazine to treat him. What do you say?",
-        "Andorians are militaristic species-- but they never fight without reason, and they despise dishonesy."
-    )
+    # Alien(
+        # "Shras",
+        # "Andorian",
+        # 20,
+        # b,
+        # False,
+        # cordrazine,
+        # "My second-in-command was in an accident and needs emergency medical treatment. I'd be happy to set "
+        # "aside our differences if you can give us a few vials of cordrazine to treat him. What do you say?",
+        # "Andorians are militaristic species-- but they never fight without reason, and they despise dishonesy."
+    # )
     Alien(
         "Sarek",
         "Vulcan",
