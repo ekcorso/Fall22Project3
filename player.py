@@ -92,7 +92,10 @@ class Player:
             print(f"You win. Your health is now {self.health}. Your diplomacy is now {self.diplomacy}.")
             alien.die()
         else:
-            print("You lose.")
+            print()
+            print("\"It is possible to commit no mistakes and still lose. That is not a weakness. That is life.\""
+                  "-- Captain Jean-Luc Picard")
+            print("(But the game is over now.)")
             self.alive = False
         print()
         input("Press enter to continue...")
